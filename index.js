@@ -4,7 +4,7 @@ const express = require("express");
 const app = express(); // create express app
 
 const wss = new ws.Server({
-    port: 3000
+    port: 777
 }, () => console.log('ws server started'))
 
 wss.on('connection', (ws) => {
@@ -25,8 +25,8 @@ function broadcast(message) {
 //     res.sendFile(path.join(__dirname, "builds", "index.html"));
 // });
 //
-// app.listen(3000, () => {
-//     console.log("server started on port 3000");
+// app.listen(5000, () => {
+//     console.log("server started on port 5000");
 // });
 //
 // console.log("success")

@@ -10,7 +10,7 @@ function App() {
 
     function connect(e) {
         e.preventDefault()
-        socket.current = new WebSocket('ws://localhost:777')
+        socket.current = new WebSocket('ws://web-sockets-node.herokuapp.com:777')
 
         socket.current.onopen = () => {
             setConnected(true)
