@@ -1,0 +1,109 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(174, 214, 241, 0.7);
+}
+
+.modal {
+  border: 2px solid #3498DB;
+  border-radius: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 500px;
+  height: 100px;
+}
+
+.modal-content {
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+.submit-button {
+  background-color: #3498DB;
+  color: #fff;
+  padding: 5px;
+  font-size: 26px;
+  border-radius: 15px;
+  border: 2px solid #3498DB;
+  margin-left: 15px;
+  flex: 1;
+}
+
+.modal-input {
+  flex: 4;
+  padding: 5px;
+  font-size: 26px;
+  border-radius: 15px;
+  border: 2px solid #3498DB;
+  outline: none;
+}
+
+.messages-modal {
+  border: 2px solid #3498DB;
+  border-radius: 15px;
+  margin: 30px auto;
+  width: 720px;
+  height: 90%;
+  padding: 20px;
+  min-height: 500px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.form {
+  display: flex;
+}
+
+.connection_message {
+  text-align: center;
+  color: gray;
+  text-decoration: underline;
+}
+
+.messages {
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  align-items: stretch;
+}
+
+.message {
+  position: relative;
+  background-color: #3498DB;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  max-width: 400px;
+  margin-top: 15px;
+}
+
+.my-message {
+  margin-top: 15px;
+  max-width: 400px;
+  text-align: right;
+  margin-left: auto;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  background-color: #28B463;
+  border-radius: 10px;
+  padding: 10px;
+}
