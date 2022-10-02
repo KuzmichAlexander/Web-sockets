@@ -20,9 +20,9 @@ function broadcast(message) {
     })
 }
 
-app.use(express.static("build"));
+app.use(express.static("builds"));
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
+    res.sendFile(path.join(__dirname, "builds", "index.html"));
 });
 
 app.listen(5000, () => {
