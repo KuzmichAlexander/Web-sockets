@@ -1,5 +1,6 @@
 import './App.css'
 import {useEffect, useRef, useState} from "react"
+var HOST = window.location.origin.replace(/^http/, 'ws')
 
 function App() {
     const [messages, setMessages] = useState([])
@@ -10,7 +11,7 @@ function App() {
 
     function connect(e) {
         e.preventDefault()
-        socket.current = new WebSocket('ws://web-sockets-node.herokuapp.com:777')
+        socket.current = new WebSocket(HOST)
 
         socket.current.onopen = () => {
             setConnected(true)

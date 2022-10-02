@@ -1,11 +1,13 @@
 const ws = require('ws')
 const path = require("path");
 const express = require("express");
-const app = express(); // create express app
+const PORT = process.env.PORT || 5000;
+const server = express()
+    .use(express.static("builds"))
+    .use((req, res) => res.sendFile(path.join(__dirname, "builds", "index.html")))
+    .listen(PORT, () => console.log(`Listening on ${PORT}`)); // create express app
 
-const wss = new ws.Server({
-    port: 777
-}, () => console.log('ws server started'))
+const wss = new ws.Server({server})
 
 wss.on('connection', (ws) => {
     ws.on('message', (message) => {
@@ -19,14 +21,3 @@ function broadcast(message) {
         client.send(JSON.stringify(message))
     })
 }
-
-// app.use(express.static("builds"));
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "builds", "index.html"));
-// });
-//
-// app.listen(5000, () => {
-//     console.log("server started on port 5000");
-// });
-//
-// console.log("success")
